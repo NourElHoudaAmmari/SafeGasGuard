@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".MainActivity"
+    android:background="@drawable/background_gradient"> <!-- Utilisez un dégradé personnalisé pour le fond -->
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="SafeGasGuard"
+    android:textAlignment="center"
+    android:textSize="28sp"
+    android:layout_marginTop="30dp"
+    android:textColor="@color/black"
+    android:fontFamily="@font/brandon_blk"/>
+    <EditText
+        android:id="@+id/brokerAddressEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Broker Address"
+        android:inputType="text"
+        android:background="@drawable/edittext_background"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="98dp"
+        android:paddingStart="16dp"
+    />
+    <EditText
+        android:id="@+id/brokerPortEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/brokerAddressEditText"
+        android:layout_marginTop="12dp"
+        android:hint="Broker Port"
+        android:paddingStart="16dp"
+        android:background="@drawable/edittext_background"
+        android:inputType="number" />
+    <EditText
+        android:id="@+id/gasTopicEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/brokerPortEditText"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/edittext_background"
+        android:hint="Gas Topic"
+        android:paddingStart="16dp"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/thresholdEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/gasTopicEditText"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/edittext_background"
+        android:hint="Threshold"
+        android:paddingStart="16dp"
+        android:inputType="numberDecimal" />
+
+
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/thresholdEditText"
+        android:layout_marginTop="16dp"
+        android:text="Start"
+
+        android:textColor="@color/white"
+        android:background="@drawable/button_background"
+        android:layout_centerHorizontal="true"
+        android:onClick="startButtonClick" />
+
+    <TextView
+        android:id="@+id/gasValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/startButton"
+        android:layout_marginTop="19dp"
+        android:text="Gas Value: "
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/textItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="500dp"
+        android:layout_marginLeft="10dp"
+        android:text="history"
+        android:textColor="@color/black"
+        android:textSize="18sp"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/list_id"
+        android:layout_marginTop="540dp"
+        tools:ignore="InvalidId"/>
+</RelativeLayout>
